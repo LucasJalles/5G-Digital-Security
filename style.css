@@ -1,0 +1,548 @@
+/* Estilos Gerais e Variáveis */
+:root {
+    --primary-color: #0A74DA; /* Azul moderno */
+    --secondary-color: #0D1B2A; /* Azul escuro/quase preto */
+    --text-color: #E0E1DD; /* Cinza claro */
+    --white-color: #FFFFFF;
+    --font-main: 'Arial', sans-serif; /* Usando uma fonte padrão por enquanto */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.main-header {
+    background-color: rgba(13, 27, 42, 0.8);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Seção Hero */
+#hero {
+    background-image: url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=2070&auto=format&fit=crop' ); /* Imagem de placeholder */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay escuro para legibilidade */
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+#hero .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.cta-button-hero {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* Seção Serviços */
+#servicos {
+    padding: 80px 0;
+    background-color: #0D1B2A; /* Cor de fundo um pouco diferente para contraste */
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.service-card {
+    background-color: #1B263B; /* Cor dos cards */
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #415A77;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--white-color);
+}
+
+.service-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+/* Seção Abordagem e Contato */
+#contato {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Responsividade para a seção de contato */
+@media (max-width: 992px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.approach-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--white-color);
+}
+
+.approach-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.approach-list {
+    list-style: none;
+    padding: 0;
+}
+
+.approach-list li {
+    font-size: 1em;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.approach-list li::before {
+    content: '✔'; /* Ícone de check */
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+/* Formulário */
+.contact-form-wrapper {
+    background-color: #1B263B;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #415A77;
+}
+
+.contact-form-wrapper h3 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #415A77;
+    background-color: #0D1B2A;
+    color: var(--white-color);
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.cta-button-form {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button-form:hover {
+    background-color: #085AAB; /* Tom mais escuro do azul */
+}
+/* Seção Sobre Nós */
+#sobre {
+    padding: 80px 0;
+    background-color: #0D1B2A;
+    text-align: center;
+}
+
+.about-us-content {
+    max-width: 800px; /* Limita a largura para melhor legibilidade */
+    margin: 0 auto;
+}
+
+#sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#sobre p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* Rodapé */
+#footer {
+    background-color: #1B263B;
+    padding-top: 60px;
+    color: var(--text-color);
+}
+
+.footer-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-info strong {
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 10px;
+    color: var(--white-color);
+}
+
+.footer-info p {
+    line-height: 1.6;
+}
+
+.footer-contact h4,
+.footer-nav h4 {
+    font-size: 1.2em;
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+}
+
+.footer-contact a,
+.footer-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover,
+.footer-nav a:hover {
+    color: var(--primary-color);
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #415A77;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Seção Diferenciais */
+#diferenciais {
+    padding: 80px 0;
+    background-color: #1B263B; /* Cor de fundo para destacar */
+}
+
+#diferenciais h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--white-color);
+}
+
+.feature-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+/* Seção Prova Social (Logos) */
+#social-proof {
+    padding: 60px 0;
+    background-color: var(--secondary-color);
+}
+
+#social-proof h2 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.logos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.logos-container img {
+    max-height: 50px;
+    filter: grayscale(100%) opacity(70%); /* Efeito para uniformizar os logos */
+    transition: filter 0.3s ease;
+}
+
+.logos-container img:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+/* Seção FAQ */
+#faq {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+#faq h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #1B263B;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #415A77;
+}
+
+.faq-item summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    list-style: none; /* Remove o marcador padrão */
+}
+
+.faq-item summary::after {
+    content: '+'; /* Ícone de "mais" */
+    font-size: 1.5em;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: translateY(-50%) rotate(45deg); /* Transforma em "x" */
+}
+
+.faq-item p {
+    padding: 0 20px 20px 20px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+/* Seção Estatísticas */
+#stats {
+    padding: 80px 0;
+    background-color: #0D1B2A;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-item .stat-label {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* Classe para esconder títulos visualmente, mas mantê-los para leitores de tela */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.floating-cta {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.floating-cta:hover {
+    transform: scale(1.1);
+}
